@@ -1,0 +1,18 @@
+var http = require('http');
+var hostname = 'localhost';
+var port = 3000;
+var fs = require('fs');
+var path = require('path');
+
+
+var server = http.createServer(function(req, res){
+	console.log('Request url is: ' + req.url + ' and request method is: ' + req.method);
+	
+	res.writeHead(200, { 'Content-Type': 'text/html' });
+	res.write('Lets see what this does!');
+	res.end('<html><body><h1>Hello World</h1></body></html>');
+});
+
+server.listen(port,hostname,function(){
+	console.log('Server running at http://' + hostname + ':' + port + '/');
+});

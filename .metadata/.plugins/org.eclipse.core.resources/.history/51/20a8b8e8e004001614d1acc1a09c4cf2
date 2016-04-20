@@ -1,0 +1,18 @@
+var rect = ('./callbackModule.js');
+
+function solveRect(l,b){
+	if(l <= 0 || b <= 0){
+		console.log("Invalid dimensions of a rectangle");
+	}else{
+		rect(l,b,function(err,rectangle){
+			if(err){
+				console.log(err);
+			}else{
+				console.log("Area: " + rect.area(l,b) + " and Perimeter: " + rect.perimeter(l,b));
+			}
+		});
+	}
+	
+};
+
+solveRect(2,4);
